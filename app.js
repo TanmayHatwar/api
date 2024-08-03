@@ -27,20 +27,19 @@ app.post('/format-data', async (req, res) => {
 
     const prompt = `
     if it is a ticket do doc type as ticket
-    if it looks like an aadhar card, pan card, passport then give the doc type accordingly and put Passenger Name as the name of teh person of this card
+    if it looks like an aadhar card, pan card, passport then give the doc type accordingly and put Passenger Name as the name of teh person of this card in these dont put any other details also in PAN two names will be there choose the first one only
     When you get the name of station or Passenger name you format it like first letter capital for first letter and rest all small
-    In case of timings convert it into AM/PM 12 hrs format
-    In case of dates follow DD/MM/YYYY format
+
         Please extract and format the following booking details into a JSON format. Include only the following information:
         - Doc Type
         - PNR
         - Train Number
         - Passenger Name
-        - Arrival Date
-        - Arrival Time
+        - Arrival Date (convert it into a striong of format DD/MM/YYYY)
+        - Arrival Time (convert it into 12 hr format AM/PM)
         - Arrival Station
-        - Departure Date
-        - Departure Time
+        - Departure Date (convert it into a striong of format DD/MM/YYYY)
+        - Departure Time (convert it into 12 hr format AM/PM)
         - Departure Station
 
         Here are the details:
